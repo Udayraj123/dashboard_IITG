@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Course Review</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <h1 style="text-align:center">Course Feedback Form</h1>
+            <br>
+            <form>
+                <div class="form-group">
+                    <label for="dept">Name of the Department/ Center: </label>
+                    <input type="name" class="form-control" id="dept" placeholder="Enter department">
+                </div>
+                <div class="form-group">
+                    <label for="course">Course No. & Title </label>
+                    <input type="name" class="form-control" id="course" placeholder="Enter course">
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="instr">Name of the Instructor: </label>
+                            <input type="name" class="form-control" id="instr" placeholder="Enter Instructor Name">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="tutor">Name of the Tutor/TA: </label>
+                            <input type="name" class="form-control" id="tutor" placeholder="Enter Tutor/TA Name">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="lab">Name of the Lab Instructor/TA: </label>
+                            <input type="name" class="form-control" id="lab" placeholder="Enter Lab Instructor/TA Name">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row" style="font-size: x-large">
+                        <b>About the Instructor</b></div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            1. Overall, the teaching by the instructor was excellent
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <select id="instr_1" class="form-control">
+                                    <option value="5" selected="selected">Strongly Agree(5)</option>
+                                    <option value="4">Agree(4)</option>
+                                    <option value="3">Neutral(3)</option>
+                                    <option value="2">Disagree(2)</option>
+                                    <option value="1">Strongly Disagree(1)</option>
+                                    <option value="0">Unable to Judge(-)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            2. The concepts were explained with clarity.
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <select id="instr_2" class="form-control">
+                                    <option value="5" selected="selected">Strongly Agree(5)</option>
+                                    <option value="4">Agree(4)</option>
+                                    <option value="3">Neutral(3)</option>
+                                    <option value="2">Disagree(2)</option>
+                                    <option value="1">Strongly Disagree(1)</option>
+                                    <option value="0">Unable to Judge(-)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            3. Questions and discussions were encouraged.
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <select id="instr_3" class="form-control">
+                                    <option value="5" selected="selected">Strongly Agree(5)</option>
+                                    <option value="4">Agree(4)</option>
+                                    <option value="3">Neutral(3)</option>
+                                    <option value="2">Disagree(2)</option>
+                                    <option value="1">Strongly Disagree(1)</option>
+                                    <option value="0">Unable to Judge(-)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            4. Allotted number of classes was held.
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <select id="instr_4" class="form-control">
+                                    <option value="5" selected="selected">Strongly Agree(5)</option>
+                                    <option value="4">Agree(4)</option>
+                                    <option value="3">Neutral(3)</option>
+                                    <option value="2">Disagree(2)</option>
+                                    <option value="1">Strongly Disagree(1)</option>
+                                    <option value="0">Unable to Judge(-)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            5. Evaluation was done regularly and feedback was given.
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <select id="instr_5" class="form-control">
+                                    <option value="5" selected="selected">Strongly Agree(5)</option>
+                                    <option value="4">Agree(4)</option>
+                                    <option value="3">Neutral(3)</option>
+                                    <option value="2">Disagree(2)</option>
+                                    <option value="1">Strongly Disagree(1)</option>
+                                    <option value="0">Unable to Judge(-)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                            <label for="instr_strong">Strong Points</label>
+                            <textarea class="form-control" id="instr_strong" rows="5"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="instr_weak">Weak Points</label>
+                                <textarea class="form-control" id="instr_weak" rows="5"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="container">
+                        <div class="row" style="font-size: x-large">
+                            <b>About the Course</b></div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-6">
+                                1. The course was highly enjoyable.
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <select id="course_1" class="form-control">
+                                        <option value="5" selected="selected">Strongly Agree(5)</option>
+                                        <option value="4">Agree(4)</option>
+                                        <option value="3">Neutral(3)</option>
+                                        <option value="2">Disagree(2)</option>
+                                        <option value="1">Strongly Disagree(1)</option>
+                                        <option value="0">Unable to Judge(-)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                2. The content of the course was appropriate.
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <select id="course_2" class="form-control">
+                                        <option value="5" selected="selected">Strongly Agree(5)</option>
+                                        <option value="4">Agree(4)</option>
+                                        <option value="3">Neutral(3)</option>
+                                        <option value="2">Disagree(2)</option>
+                                        <option value="1">Strongly Disagree(1)</option>
+                                        <option value="0">Unable to Judge(-)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                3. Text/Reference materials were appropriate for the course.
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <select id="course_3" class="form-control">
+                                        <option value="5" selected="selected">Strongly Agree(5)</option>
+                                        <option value="4">Agree(4)</option>
+                                        <option value="3">Neutral(3)</option>
+                                        <option value="2">Disagree(2)</option>
+                                        <option value="1">Strongly Disagree(1)</option>
+                                        <option value="0">Unable to Judge(-)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="instr_strong">Strong Points</label>
+                                <textarea class="form-control" id="course_strong" rows="5"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="instr_weak">Weak Points</label>
+                                <textarea class="form-control" id="course_weak" rows="5"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="container">
+                        <div class="row" style="font-size: x-large">
+                            <b>About the Tutorial (for courses having Tutorials)</b></div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-6">
+                                1. Overall, the tutoring by the tutor was excellent.
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <select id="tut_1" class="form-control">
+                                        <option value="5" selected="selected">Strongly Agree(5)</option>
+                                        <option value="4">Agree(4)</option>
+                                        <option value="3">Neutral(3)</option>
+                                        <option value="2">Disagree(2)</option>
+                                        <option value="1">Strongly Disagree(1)</option>
+                                        <option value="0">Unable to Judge(-)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                2. Questions were encouraged and discussions were effective.
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <select id="tut_2" class="form-control">
+                                        <option value="5" selected="selected">Strongly Agree(5)</option>
+                                        <option value="4">Agree(4)</option>
+                                        <option value="3">Neutral(3)</option>
+                                        <option value="2">Disagree(2)</option>
+                                        <option value="1">Strongly Disagree(1)</option>
+                                        <option value="0">Unable to Judge(-)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                3. Tutorials were useful for problem solving/ doubt clearing.
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <select id="tut_3" class="form-control">
+                                        <option value="5" selected="selected">Strongly Agree(5)</option>
+                                        <option value="4">Agree(4)</option>
+                                        <option value="3">Neutral(3)</option>
+                                        <option value="2">Disagree(2)</option>
+                                        <option value="1">Strongly Disagree(1)</option>
+                                        <option value="0">Unable to Judge(-)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="instr_strong">Strong Points</label>
+                                <textarea class="form-control" id="tutor_strong" rows="5"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="instr_weak">Weak Points</label>
+                                <textarea class="form-control" id="tutor_weak" rows="5"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="container">
+                        <div class="row" style="font-size: x-large">
+                            <b>About the Lab/ Studio: (for courses having Lab/Studio)</b></div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-6">
+                                1. The lab/ studio was highly enjoyable.
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <select id="lab_1" class="form-control">
+                                        <option value="5" selected="selected">Strongly Agree(5)</option>
+                                        <option value="4">Agree(4)</option>
+                                        <option value="3">Neutral(3)</option>
+                                        <option value="2">Disagree(2)</option>
+                                        <option value="1">Strongly Disagree(1)</option>
+                                        <option value="0">Unable to Judge(-)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                2. Lab/ manual / proper instruction for Studio courses was made available.
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <select id="lab_2" class="form-control">
+                                        <option value="5" selected="selected">Strongly Agree(5)</option>
+                                        <option value="4">Agree(4)</option>
+                                        <option value="3">Neutral(3)</option>
+                                        <option value="2">Disagree(2)</option>
+                                        <option value="1">Strongly Disagree(1)</option>
+                                        <option value="0">Unable to Judge(-)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                3. The lab/ studio sessions were conducted smoothly.
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <select id="lab_3" class="form-control">
+                                        <option value="5" selected="selected">Strongly Agree(5)</option>
+                                        <option value="4">Agree(4)</option>
+                                        <option value="3">Neutral(3)</option>
+                                        <option value="2">Disagree(2)</option>
+                                        <option value="1">Strongly Disagree(1)</option>
+                                        <option value="0">Unable to Judge(-)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="instr_strong">Strong Points</label>
+                                <textarea class="form-control" id="lab_strong" rows="5"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="instr_weak">Weak Points</label>
+                                <textarea class="form-control" id="lab_weak" rows="5"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-1"></div>
+        </div>
+    </div>
+</body>
+</html>
