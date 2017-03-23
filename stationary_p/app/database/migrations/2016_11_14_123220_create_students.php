@@ -14,11 +14,11 @@ class CreateStudents extends Migration {
 	{
 		Schema::create('students',function($table){
 			$table->increments('id');
-			$fields=Config::get('p.studfields');
+			$fields=C::get('p.studfields');
 			foreach($fields['string'] as $si) $table->string($si);
 			foreach($fields['integer'] as $ii) $table->integer($ii);
-			$table->enum('hostel',Config::get('p.hostels'));
-			$table->enum('department',Config::get('p.departments'));
+			$table->enum('hostel',C::get('p.hostels'));
+			$table->enum('department',C::get('p.departments'));
 			$table->timestamps();
 			foreach($fields['bigInteger'] as $bi) $table->bigInteger($bi);
 			foreach($fields['tinyinteger'] as $ti) $table->tinyinteger($ti)->default(0);

@@ -14,11 +14,26 @@ class stationaryController extends BaseController {
 	|	Route::get('/', 'stationaryController@showWelcome');
 	|
 	*/
-	public function fetchMenu($view="station",$currH="KAPILI"){
-	return View::make('stationary.'.$view);
-		$hostel = Hostel::where('name',$currH)->first();
-		$vendor = $hostel->vendor($view);
-		$items=   $vendor->products();
-		return View::make('stationary.'.$view)->with(['currH'=>$currH,'items'=>$items]);
+	public function fetchMenu($view="stationary",$currH="KAPILI"){
+		$currH = strtoupper($currH);
+		if($view!="mess"){
+			$store_type=$view;
+			$hostel = Hostel::where('name',$currH)->first();
+			$vendor = $hostel->vendor($store_type);
+			if(!$vendor){
+				$items=[];
+				$vendor=['name'=>'No Vendor'];
+			}
+			else{
+				$items=   $vendor->products();
+				$vendor=$vendor->toArray();
+			}
+		}
+		else{
+			$items = [];
+			$vendor = [];
+		}
+
+		return View::make('stationary.'.$view)->with(['currH'=>$currH,'view'=>$view,'items'=>$items,'vendor'=>$vendor]);
 	}
 }

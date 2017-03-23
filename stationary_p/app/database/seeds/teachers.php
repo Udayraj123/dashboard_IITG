@@ -2,10 +2,10 @@
 class teachers extends Seeder {
 	public function run(){
 		DB::table('teachers')->truncate();
-		$teacher_names=Config::get('p.teacher_names');
-		$departments=Config::get('p.departments');
+		$teacher_names=C::get('p.teacher_names');
+		$departments=C::get('p.departments');
 		$modN=count($teacher_names);$modD=count($departments);
-		$admin_names=Config::get('p.admin_names');
+		$admin_names=C::get('p.admin_names');
 		$modA=count($admin_names); 
 		$start=$modA;
 		$n=$modN;

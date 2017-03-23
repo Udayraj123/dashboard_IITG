@@ -4,11 +4,11 @@ class AdminController extends Controller {
 
 	public function addRole() {
 	// Only admin access (filtered.)
-		$all_roles =Config::get('p.roles');
-		$dept_roles =Config::get('p.department_roles');
-		$hostel_roles =Config::get('p.hostel_roles');
-		$qip_roles =Config::get('p.qip_roles');
-		$daysch_roles =Config::get('p.daysch_roles');
+		$all_roles =C::get('p.roles');
+		$dept_roles =C::get('p.department_roles');
+		$hostel_roles =C::get('p.hostel_roles');
+		$qip_roles =C::get('p.qip_roles');
+		$daysch_roles =C::get('p.daysch_roles');
 		if(!(Input::has('role','sel_faculty') &&  array_search(Input::get('role'), $all_roles)>-1))return array('status'=>'Invalid Input');
 
 		$t=Teacher::find(Input::get('sel_faculty'));

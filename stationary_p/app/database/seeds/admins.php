@@ -2,7 +2,7 @@
 class admins extends Seeder {
 	public function run(){
 		DB::table('admins')->truncate();
-		$admin_names=Config::get('p.admin_names');
+		$admin_names=C::get('p.admin_names');
 		$modN=count($admin_names);
 		$start=0;
 		$dummies=[];

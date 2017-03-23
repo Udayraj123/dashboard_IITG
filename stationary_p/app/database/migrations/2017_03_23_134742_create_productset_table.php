@@ -17,6 +17,7 @@ class CreateProductsetTable extends Migration {
 			$table->increments('id');
 			$table->string('img', 250);
 			$table->string('name', 250);
+			// $table->enum('store_type',C::get('p.store_types'));
 			$table->timestamps();
 		});
 	}

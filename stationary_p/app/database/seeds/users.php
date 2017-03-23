@@ -2,11 +2,11 @@
 class users extends Seeder {
 	public function run(){
 		DB::table('users')->truncate();
-		$admin_names=Config::get('p.admin_names');
-		$student_names=Config::get('p.student_names');
-		$teacher_names=Config::get('p.teacher_names');
-		$departments=Config::get('p.departments');
-		$types=Config::get('p.types');
+		$admin_names=C::get('p.admin_names');
+		$student_names=C::get('p.student_names');
+		$teacher_names=C::get('p.teacher_names');
+		$departments=C::get('p.departments');
+		$types=C::get('p.types');
 		$modA=count($admin_names); 
 		$modS=count($student_names); 
 		$modTC=count($teacher_names); 

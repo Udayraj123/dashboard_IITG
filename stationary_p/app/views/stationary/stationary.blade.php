@@ -32,7 +32,7 @@
 @endsection
 @section('script')
 <script type="text/javascript">
-	$('#juice').addClass('active');
+	$('#station').addClass('active');
 </script>
 
 @endsection

@@ -17,6 +17,7 @@ class CreateVendorsTable extends Migration {
 			$table->increments('id');
 			$table->integer('hostel_id');
 			$table->string('name', 250); 
+			$table->integer('contact', 12); 
 			$table->enum('store_type',C::get('p.store_types'));
 			$table->timestamps();
 		});

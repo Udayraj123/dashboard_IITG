@@ -7,11 +7,11 @@
 //for fac_approvals, use stud->deptfacs
 		$u=Auth::user();
 		$s=$u->student;
-		$non_fac_dept =			Config::get('p.non_fac_dept');
-		$hostel_roles =			Config::get('p.hostel_roles');
-		$other_roles =			Config::get('p.other_roles');
-		$qip_roles =			Config::get('p.qip_roles');
-		$daysch_roles =			Config::get('p.daysch_roles');
+		$non_fac_dept =			C::get('p.non_fac_dept');
+		$hostel_roles =			C::get('p.hostel_roles');
+		$other_roles =			C::get('p.other_roles');
+		$qip_roles =			C::get('p.qip_roles');
+		$daysch_roles =			C::get('p.daysch_roles');
 		$roles=[];
 		foreach ($non_fac_dept as $r) {
 			$teacher = Role::where('role',$r)->where('domain_val',$s->department)->first();

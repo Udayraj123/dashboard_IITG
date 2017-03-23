@@ -4,11 +4,11 @@ class students extends Seeder {
 		DB::table('students')->truncate();
 		
 		$rollN=9; $acN=15;
-		$admin_names=Config::get('p.admin_names');
-		$teacher_names=Config::get('p.teacher_names');
-		$student_names=Config::get('p.student_names');
-		$departments=Config::get('p.departments');
-		$hostels=Config::get('p.hostels');
+		$admin_names=C::get('p.admin_names');
+		$teacher_names=C::get('p.teacher_names');
+		$student_names=C::get('p.student_names');
+		$departments=C::get('p.departments');
+		$hostels=C::get('p.hostels');
 		$modN=count($student_names);$modD=count($departments);
 		$modA=count($admin_names); 
 		$modT=count($teacher_names);

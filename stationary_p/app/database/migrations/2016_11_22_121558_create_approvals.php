@@ -15,11 +15,11 @@ class CreateApprovals extends Migration {
 
 		Schema::create('approvals',function($table){
 			$table->increments('id');
-			$fields=Config::get('p.approval_fields');
+			$fields=C::get('p.approval_fields');
 			foreach($fields['tinyinteger'] as $si) $table->tinyinteger($si)->default(0);
 			foreach($fields['string'] as $si) $table->string($si);
 			foreach($fields['integer'] as $si) $table->integer($si);
-			$table->enum('role',Config::get('p.roles'));
+			$table->enum('role',C::get('p.roles'));
 			$table->timestamps();
 		});
 		//

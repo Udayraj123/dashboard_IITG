@@ -21,15 +21,8 @@ class Hostel extends Eloquent implements UserInterface, RemindableInterface {
 	 *
 	 * @var array
 	 */
-	function vendor($view="station"){
-		return Vendor::where('store_type',$view)->where('hostel_id',$this->id)->first();
-	}
-	function products($view){
-		$pp = Productset::where('id',$this->productset_id)->first();
-		if (!$pp || $fn=='')
-			return [];
-		else 
-			return $pp->$fn();
+	function vendor($store_type="stationary"){
+		return Vendor::where('store_type',$store_type)->where('hostel_id',$this->id)->first();
 	}
 
 }

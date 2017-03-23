@@ -13,7 +13,7 @@ class studentController extends \BaseController {
 	
 	public function status() {
 		$user=Auth::user();
-		$one_fields=Config::get('p.one_fields');;
+		$one_fields=C::get('p.one_fields');;
 		$s=$user->student;
 		$status=1;
 		foreach ($one_fields as $f)
@@ -33,15 +33,15 @@ class studentController extends \BaseController {
 		$type=Input::get('selected_type');
 		if(!(array_search($type,['approvals','rejections','self_details'])>-1))return $err;
 		//might need - 
-		$table_stud_fields1=Config::get('p.table_stud_fields1');
-		$table_stud_fields2=Config::get('p.table_stud_fields2');
-		$stud_headers=Config::get('p.stud_headers');
-		$signfield=Config::get('p.signfield');
+		$table_stud_fields1=C::get('p.table_stud_fields1');
+		$table_stud_fields2=C::get('p.table_stud_fields2');
+		$stud_headers=C::get('p.stud_headers');
+		$signfield=C::get('p.signfield');
 
 		//add type to see dept teacher list & self fields 
 
-		$fields=Config::get('p.table_fields2');
-		$table_fields2=$this->toList(Config::get('p.approval_headers'),$fields);
+		$fields=C::get('p.table_fields2');
+		$table_fields2=$this->toList(C::get('p.approval_headers'),$fields);
 
 		if($type=='self_details'){
 			//here we'd send only student name			

@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('stationary/{view?}',['as'=>'stationary_view','uses'=>'stationaryController@fetchMenu']);
+Route::get('stationary/',['as'=>'stationary_view','uses'=>'stationaryController@fetchMenu']);
 Route::get('stationary/{view}/{currH?}',['as'=>'stationary_view','uses'=>'stationaryController@fetchMenu']);
-
 
 
 

@@ -1,9 +1,9 @@
 <?php
-$departments=Config::get('p.departments');
-$hostels=Config::get('p.hostels');
+$departments=C::get('p.departments');
+$hostels=C::get('p.hostels');
 $time=date('Y-m-d H:m:s');
 
-$roles=Config::get('p.roles');
+$roles=C::get('p.roles');
 $modR=count($roles);
 $modH=count($hostels); 
  $modD=count($departments);

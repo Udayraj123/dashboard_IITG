@@ -11,7 +11,7 @@ class teacherController extends \BaseController {
 
 	public function approveStuds() {
 		$u=Auth::user();
-		$signfield=Config::get('p.signfield');
+		$signfield=C::get('p.signfield');
 
 		if(!($u->teacher && Input::has('studIDs','val','selected_role')))
 			return array('status'=>'invalid input');
@@ -64,11 +64,11 @@ class teacherController extends \BaseController {
 			public function getStudList() {
 //MVC pattern
 		//common data
-				$spl_roles =			Config::get('p.spl_roles');
-				$table_fields=			Config::get('p.table_fields');
-				$stud_headers=			Config::get('p.stud_headers');
-				$signfield=				Config::get('p.signfield');
-				$checks=				Config::get('p.checks');
+				$spl_roles =			C::get('p.spl_roles');
+				$table_fields=			C::get('p.table_fields');
+				$stud_headers=			C::get('p.stud_headers');
+				$signfield=				C::get('p.signfield');
+				$checks=				C::get('p.checks');
 
 				$err=$this->err(['Error in input Data !']);	
 				$u=Auth::user();

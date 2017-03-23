@@ -16,7 +16,7 @@ class CreateUsers extends Migration {
 			$table->increments('id');
 			$table->string('username');
 			$table->string('password');
-			$table->enum('type',Config::get('p.types'));
+			$table->enum('type',C::get('p.types'));
 			//roles depts can be put in roles table
 			$table->string('remember_token');
 			$table->timestamps();

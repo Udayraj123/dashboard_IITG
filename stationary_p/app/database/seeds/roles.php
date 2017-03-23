@@ -5,10 +5,10 @@ class roles extends Seeder {
 		$tc=10;
 		$hc=3;
 		$time=date('Y-m-d H:m:s');
-		$non_fac_dept =			Config::get('p.non_fac_dept');
-		$hostel_roles=Config::get('p.hostel_roles');
-		$hostels=Config::get('p.hostels');
-		$other_roles=Config::get('p.other_roles');
+		$non_fac_dept =			C::get('p.non_fac_dept');
+		$hostel_roles=C::get('p.hostel_roles');
+		$hostels=C::get('p.hostels');
+		$other_roles=C::get('p.other_roles');
 		$modR=count($non_fac_dept);
 		$modH=count($hostel_roles);
 		$modHs=count($hostels);

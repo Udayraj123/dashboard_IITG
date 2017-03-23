@@ -1,4 +1,4 @@
-<?php
+	<?php
 	$relative_path = "../";
 	include('../db/dbconf.php');
 	include('../process/common.php');

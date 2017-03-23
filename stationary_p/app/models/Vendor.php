@@ -22,7 +22,7 @@ class Vendor extends Eloquent implements UserInterface, RemindableInterface {
 	 * @var array
 	 */
 	function products(){
-		return $this->hasMany('Product');
+		return Product::where('vendor_id',$this->id)->get();
 	}
 	
 
