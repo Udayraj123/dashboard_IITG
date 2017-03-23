@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add a Notice</title>
+</head>
+<body>
+<form action="/noticeboard/post" method="post">
+    {% csrf_token %}
+    Heading: <input type="text" name="heading"><br>
+    Name: <input type="text" name="posted_by"><br>
+    Type Choice: <input type="text" name="type_choice"><br>
+    Type : <input type="text" name="type"><br>
+    Notice : <input type="text" name="content"><br>
+    <input type="submit">
+
+   <!-- <select name="choice_type">
+    <option value="Department">Volvo</option>
+    <option value="Hostel">Saab</option>
+    </select> -->
+</form>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<body>
+<p>This is the notice board:</p>
+<a href="/noticeboard/add"><button>Add a Notice</button></a>
+<br>
+{% for notice in all_notices %}
+    <br>Heading: {{ notice.heading }}<br>
+    Posted By : {{ notice.posted_by }} <br>
+    {{ notice.type_choice }} : {{ notice.type }} <br>
+    Content: {{ notice.content }}<br>
+    posted on: {{ notice.dateadded }}<br>
+{% endfor %}
+</body>
