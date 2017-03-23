@@ -1,0 +1,54 @@
+/* Calender */
+.legend {
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+}
+#calendar {
+	box-shadow: 0px 0px 5px 0px #666;
+	border-radius: 5px;
+	overflow: auto;
+}
+#calendar * {
+	text-align: center;
+}
+.table.table-custom {
+	outline: 1px solid #eee;
+	background-color: #fcfcfc;
+}
+.table.table-custom td {
+	border:none;
+}
+.table.table-custom th {
+	background-color: #eee;
+}
+
+/* Highlighting different cells based on entry data and hover */
+.calender_link {
+	padding: 7px;
+	border-radius: 50%;
+	cursor: pointer;
+	color: #333;
+}
+.from_cam:not(.to_cam) {
+	background-color: #3498DB;
+}
+.to_cam:not(.from_cam) {
+	background-color: #F39C12;
+}
+.to_cam.from_cam {
+	background-color: #2ECC71;
+}
+.calender_link:hover {
+	background-color: yellow;
+	text-decoration: none;
+}
+/* .date_left , .date_right {
+	display: inline-block;
+	width: 5px;
+	height: 100%;
+}
+.date_left > div , .date_right > div {
+	height: 33%;
+} */

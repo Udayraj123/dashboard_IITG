@@ -1,0 +1,39 @@
+body {
+	background-color: #f0f0f0;
+}
+
+#add_form_section {
+	/* text-align: center; */
+	padding-top: 30px; padding-bottom: 30px;
+	padding-left: 10px; padding-right: 10px;
+	outline: 1px solid #ccc;
+	/* box-shadow: 0px 0px 2px 0px #666; */
+}
+#departure_time_group , #cab_time_group {
+	display: none;
+}
+#messageNotice, #successNotice {
+    display: none;
+}
+
+
+.result-group {
+	margin-top: 2px;
+	box-shadow: 0px 0px 1px 0px #666;
+	/* border: 1px solid #ccc; */
+	background-color: #fcfcfc;
+}
+.direction_tab {
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	cursor: pointer;
+}
+.direction_res {
+	/* display: none; */
+	background-color: #fff;
+	padding-top: 20px; padding-bottom: 15px;
+	padding-left: 20px; padding-right: 20px;
+	border-top: 1px solid #eee;
+	overflow: auto;
+}

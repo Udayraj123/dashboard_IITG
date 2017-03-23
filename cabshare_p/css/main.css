@@ -1,0 +1,161 @@
+body {
+	background-color: #f0f0f0;
+}
+#page {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	padding-bottom: 50px;
+}
+.footer {
+	padding: 10px;
+	background-color: hsl(200,60%,20%);
+	color: white;
+}
+.footer-title {
+	color: #F1C40F;
+	font-weight: 700;
+}
+.footer-link {
+	margin: 5px;
+	color: hsl(48,88%,50%);
+	text-decoration: none;
+	transition: all 0.3s;
+}
+.footer-link:hover {
+	color: hsl(48,88%,80%);
+	text-decoration: none;
+	border-bottom: 1px dotted #F1C40F;
+}
+.custom-link:hover {
+	text-decoration: none;
+	border-bottom: 1px dotted blue;
+}
+.custom-link.white {
+	color: white;
+}
+.custom-link.white:hover {
+	text-decoration: none;
+	border-bottom: 1px dotted white;
+}
+
+.sheet {
+	background-color: #fff;
+	overflow: hidden;
+}
+
+
+.center, .center * {
+	text-align: center;
+}
+
+.red {
+	color: red;
+}
+.blue {
+	color: blue;
+}
+.light {
+	font-weight: 300;
+}
+
+.custom-hr {
+	width: 80%;
+	border: 1px solid brown;
+}
+
+/* Custom radio */
+.block-radio {
+	display: inline-block;
+	padding: 5px; padding-left: 10px; padding-right: 10px;
+	background-color: hsla(0,0%,30%,0.8);
+	color: white;
+	text-align: center;
+	cursor: pointer;
+}
+.block-radio.checked {
+	background-color: hsla(145,63%,41%,0.8);
+}
+
+/* Custom buttons */
+.btn-hollow {
+	background-color: transparent;
+	border: 2px solid hsl(0,0%,49%);
+	transition: all 0.2s;
+	color: hsl(0,0%,49%);
+	/* margin: 5px; */
+}
+.btn-hollow:hover {
+	background-color: hsla(0,0%,49%,0.3);
+	color: white;
+}
+.btn-hollow.btn-blue {
+	border: 2px solid hsl(204,69%,53%);
+	color: hsl(204,69%,53%);
+}
+.btn-hollow.btn-blue:hover {
+	background-color: hsla(204,69%,53%,0.3);
+	color: white;
+}
+.btn-hollow.btn-sea {
+	border: 2px solid hsl(168,75%,41%);
+	color: hsl(168,75%,41%);
+}
+.btn-hollow.btn-sea:hover {
+	background-color: hsla(168,75%,41%,0.3);
+	color: white;
+}
+.btn-hollow.btn-green {
+	border: 2px solid hsl(145,63%,49%);
+	color: hsl(145,63%,49%);
+}
+.btn-hollow.btn-green:hover {
+	background-color: hsla(145,63%,49%,0.3);
+	color: white;
+}
+.btn-hollow.btn-yellow {
+	border: 2px solid hsl(48,88%,50%);
+	color: hsl(48,88%,50%);
+}
+.btn-hollow.btn-yellow:hover {
+	background-color: hsla(48,88%,50%,0.3);
+	color: white;
+}
+.btn-hollow.btn-orange {
+	border: 2px solid hsl(28,79%,51%);
+	color: hsl(28,79%,51%);
+}
+.btn-hollow.btn-orange:hover {
+	background-color: hsla(28,79%,51%,0.3);
+	color: white;
+}
+.btn-hollow.btn-red {
+	border: 2px solid hsl(5,78%,57%);
+	color: hsl(5,78%,57%);
+}
+.btn-hollow.btn-red:hover {
+	background-color: hsla(5,78%,57%,0.3);
+	color: white;
+}
+
+
+/* Custom Input field*/
+.hollow-input {
+	border-radius: 0;
+	box-shadow: none;
+	border: none;
+	border-bottom: 1px solid #ccc;
+	background-color: transparent;
+	color: black;
+}
+.hollow-input:focus {
+	border-radius: 0;
+	box-shadow: none;
+	border: none;
+	outline: none;
+	border-bottom: 1px solid #2ECC71;
+}
+.hollow-input::-webkit-input-placeholder { color: #999; }
+.hollow-input::-moz-input-placeholder { color: #999; }
+.hollow-input::-ms-input-placeholder { color: #999; }
+.hollow-input::-o-input-placeholder { color: #999; }
+.hollow-input::input-placeholder { color: #999; }
