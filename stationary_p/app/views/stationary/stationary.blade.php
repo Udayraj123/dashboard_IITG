@@ -4,6 +4,7 @@
 	<div class="container col-md-8">
 		<ul class="list-group">
 			<li class="list-group-item active align-self-center">Name: {{$vendor['name']}}</li>
+<br>
 			<li class="list-group-item align-self-center">
 			Contact:
 			@if(array_key_exists('contact',$vendor))
@@ -14,7 +15,7 @@
 			</li>
 		</ul>
 	</div>
-</div>
+</div><br>
 <div class="row">
 	<div class="col-md-3 active align-self-center">Name</div>
 	<div class="col-md-3">Price</div>

@@ -2,7 +2,7 @@
 
 @section('headContent')
 <title>
-	Log In | NoDuesApp
+	Log In | WebApp
 </title>
 @endsection
 
@@ -10,20 +10,18 @@
 
 <div class="row" align="center">
 
-
-
 	<div class="col-md-6">
 
-	<div class="box box-info form-horizontal">
-	<div class="box-header with-border">
-	<h2 class="box-title">NoDues WebApp</h2>
-	</div>
-	<div class="box-header with-border">
-		<h3 class="box-title">Log In</h3>
-	</div>
+		<div class="box box-info form-horizontal">
+			<div class="box-header with-border">
+				<h2 class="box-title"> WebApp</h2>
+			</div>
+			<div class="box-header with-border">
+				<h3 class="box-title">Log In</h3>
+			</div>
 			<!-- /.box-header -->
 			<!-- form start -->
-			{{Form::open(array('url'=>route("login"))) }}
+			{{Form::open(array('url'=>route("postvendorlogin"))) }}
 
 			@foreach($errors as $e)
 			<span class="text-warning">

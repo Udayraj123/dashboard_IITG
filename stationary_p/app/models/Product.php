@@ -15,6 +15,7 @@ class Product extends Eloquent implements UserInterface, RemindableInterface {
 	 * @var string
 	 */
 	protected $table = 'products';
+	protected $fillable = ['productset_id','left','name','price','monthly_orders','vendor_id'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -24,6 +25,7 @@ class Product extends Eloquent implements UserInterface, RemindableInterface {
 	function vendor(){
 		return $this->belongsTo('Vendor');
 	}
+
 	function pp($fn){
 		$pp = Productset::where('id',$this->productset_id)->first();
 		if (!$pp || $fn=='')

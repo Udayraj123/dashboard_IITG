@@ -55,7 +55,7 @@ class HomeController extends BaseController {
 				}
 			}
 			else return array('resp'=>"error in user type");
-				return array('resp'=>'Created. Now Login');
+			return array('resp'=>'Created. Now Login');
 		}
 		return array('resp'=>'Invalid Input');
 	}

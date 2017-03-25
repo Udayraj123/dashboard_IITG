@@ -24,6 +24,9 @@ class Vendor extends Eloquent implements UserInterface, RemindableInterface {
 	function products(){
 		return Product::where('vendor_id',$this->id)->get();
 	}
+		function hostel(){
+		return $this->belongsTo('Hostel');
+	}
 	
 
 }

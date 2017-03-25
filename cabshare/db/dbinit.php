@@ -1,7 +1,6 @@
 <?php
 
 require 'dbconf.php';
-
 if(mysql_connect($db_hostname,$db_username,$db_password))
 {
 	$query="CREATE DATABASE IF NOT EXISTS ".$db_database;

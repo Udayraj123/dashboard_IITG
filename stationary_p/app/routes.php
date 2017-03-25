@@ -16,37 +16,18 @@ Route::get('stationary/{view}/{currH?}',['as'=>'stationary_view','uses'=>'statio
 
 
 
+Route::get('/',['as'=>'vendorlogin','uses'=>'vendorController@login']);
+Route::get('/login',['as'=>'vendorlogin1','uses'=>'vendorController@login']);
+Route::group(['before'=>'csrf'],function(){
+	//cause I used Form::open()
+	Route::post('/login',['as'=>'postvendorlogin','uses'=>'vendorController@postlogin']);
+});
 
+//ajax - out of auth for test
+Route::post('/fetchProds',['as'=>'fetchProds','uses'=>'vendorController@fetchProds']);
+Route::post('/addProd',['as'=>'addProd','uses'=>'vendorController@addProd']);
+Route::post('/delProd',['as'=>'delProd','uses'=>'vendorController@delProd']);
 
-
-
+Route::group(['before'=>'auth.vendor'],function(){
+});
 ////////////////////////////////////////////****************   Olds **************************///////////////////////////////////////
-Route::get('/login',function(){
-	return View::make('login');
-});
-Route::get('/create',function(){return View::make('create');});
-Route::group(array('before' => 'teacher'), function(){
-	Route::get('/panel',['as'=>'panel_teacher',function(){return View::make('panel_teacher');}]);
-	Route::post('/getStudList',['as'=>'getStudList','uses'=>'teacherController@getStudList']);
-	Route::post('/approveStuds',['as'=>'approveStuds','uses'=>'teacherController@approveStuds']);
-});
-
-Route::group(array('before' => 'admin'), function(){
-	Route::get('/panel_admin',['as'=>'panel_admin',function(){return View::make('panel_admin');}]);
-	Route::post('/addRole',['as'=>'addRole','uses'=>'AdminController@addRole']);
-});
-
-Route::group(array('before' => 'student'), function()
-{
-	Route::get('/home',['as'=>'panel_student','uses'=>'studentController@panel_student']);
-	Route::post('/getApprList',['as'=>'getApprList','uses'=>'studentController@getApprList']);
-	
-});
-
-
-Route::post('/createUser',['as'=>'createUser','uses'=>'HomeController@createUser']);
-Route::group(array('before' => 'csrf'), function()
-{
-	Route::post('/createTeacher',['as'=>'createTeacher','uses'=>'HomeController@createTeacher']);
-	Route::post('/login',['as'=>'login','uses'=>'HomeController@login']);
-});

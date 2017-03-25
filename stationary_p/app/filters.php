@@ -49,18 +49,6 @@ Route::filter('auth', function()
 });
 
 
-Route::filter('teacher', function()
-{
-	if (!Auth::user())
-		return View::make('login')->with('errors',['Unauthorised User']);
-	else {
-		$user=Auth::user();
-		if(!$user->teacher)
-			return View::make('login')->with('errors',['Unauthorised User']);
-	}
-});
-
-
 Route::filter('admin', function()
 {
 	if (!Auth::user())
@@ -73,17 +61,11 @@ Route::filter('admin', function()
 });
 
 
-Route::filter('student', function()
+Route::filter('auth.vendor', function()
 {
 	if (!Auth::user())
 		return View::make('login')->with('errors',['Unauthorised User']);
-	else {
-		$user=Auth::user();
-		if(!$user->student)
-			return View::make('login')->with('errors',['Unauthorised User']);
-	}
 });
-
 
 Route::filter('auth.basic', function()
 {

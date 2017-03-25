@@ -34,6 +34,6 @@ class stationaryController extends BaseController {
 			$vendor = [];
 		}
 
-		return View::make('stationary.'.$view)->with(['currH'=>$currH,'view'=>$view,'items'=>$items,'vendor'=>$vendor]);
+		return View::make('stationary.master')->with(['currH'=>$currH,'view'=>$view,'items'=>$items,'vendor'=>$vendor]);
 	}
 }
