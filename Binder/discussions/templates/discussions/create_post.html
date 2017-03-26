@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Food Share</title>
+    {% load staticfiles %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'discussions/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'discussions/css/bootstrap-reboot.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'discussions/css/bootstrap-grid.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'discussions/js/bootstrap.min.js' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'discussions/js/jquery.min.js' %}">
+</head>
+<body style="background-color: #f4f6f6;">
+	<div class="container-fluid">
+	<div class="row">
+	<div class="col-md-2"></div>
+	<div class="col-md-8">
+	<h3 style="text-align: center;">Add the Details:</h3>
+	<br>
+    {% if message %}
+        <h5 class="text-success">{{ message }}</h5>
+    {% endif %}
+	<form method="POST" action="">
+        {% csrf_token %}
+        {% for field in form %}
+	<div class="row">
+        {% if field.errors %}
+        <div class="col-md-12" style="text-align: center">
+            {{ field.errors }}
+        </div>
+        {% endif %}
+	<div class="col-md-6"><b>{{ field.label_tag }}</b></div>
+	<div class="col-md-6">
+		<div class="form-group">
+            {{ field }}
+        </div>
+	</div>
+	</div>
+    {% endfor %}
+    <button type="submit" class="btn btn-success" name="action">Submit</button>
+	</form>
+	<div class="col-md-2"></div>
+	</div>
+	</div>
+    </div>
+</body>
+</html>
+

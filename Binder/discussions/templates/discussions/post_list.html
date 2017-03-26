@@ -1,0 +1,96 @@
+{% extends 'discussions/base.html' %}
+{% block dashactive %}active{% endblock %}
+{% block title %}Dashboard{% endblock %}
+{% block body %}
+<div class="row">
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <form  method="GET" action="" >
+                                    <div class="col-md-6">
+                                        <input type="text" name="q" class="form-control" placeholder="Search post..." /></div>
+                                    <div class="col-md-6">
+                                        <button  class="btn btn-success" type="submit" name="action">Search</button></div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-twitter" style="font-size: 1.5em;color: skyblue"></i>
+          <div style="padding-left: 10px">
+          New Post:</div>
+        </div>
+        <div class="card-body">
+          <div class="row">
+  <div class="col-md-6">
+  <div class="media-comment">
+    <div>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">
+      Add New
+      </button>
+    </div>
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header"  style="background-color: #e7edee">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Feed in your new Post:</h4>
+          </div>
+          <div class="modal-body">
+            <iframe src="{% url 'discussions:create_post' %}" width="100%" style="height: 300px;"></iframe>
+            </div>
+          <div class="modal-footer">
+            <a href="{% url 'discussions:list' %}"><button type="button" class="btn btn-sm btn-default">Close</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    </div>
+<div class="row">
+<div class="col-sm-12 col-xs-12">
+      <div class="card">
+        <div class="card-header">
+          Feeds
+        </div>
+        <div class="card-body">
+        {% if post.count == 0 %}
+            <div class="center text-danger">No posts to display!</div>
+        {% endif %}
+            {% for obj in post %}
+          <div class="media social-post">
+          <div class="media-left">
+    <a href="#">
+      <div class="icon">
+          <i class="fa fa-user fa-3x" aria-hidden="true"></i>
+      </div>
+    </a>
+  </div>
+  <div class="media-body">
+    <div class="media-heading">
+        <a href='{{ obj.get_absolute_url }}'><h3 class="box-title">{{ obj.title }}</h3> </a>
+      <h4 class="title" style="font-weight: bold;text-transform: capitalize;">{{ obj.writer }}</h4>
+      <h5 class="timeing">{{ obj.timestamp }}</h5>
+    </div>
+    <div class="media-content">{{obj.content}}</div>
+    <div class="media-content">Tags:
+    <a href="">#GoingTo:{{ obj.goingat }};</a>
+        <a href="">#ComingBack:{{ obj.comingback }}</a>
+    </div>
+  </div>
+</div>
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+
+</div>
+{% endblock %}

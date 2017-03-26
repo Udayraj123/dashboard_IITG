@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CabShare</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load staticfiles %}
+
+  <link rel="stylesheet" type="text/css" href="{% static 'discussions/vendor.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'discussions/flat-admin.css' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <script>
+  var text=["Eat 'n Sleep!"];
+  console.log(text[0]);
+  $(document).ready(function(){
+    var i = 0;
+    var n = 13;
+    var k="";
+    function nextFrame() {
+        if(i < n) {
+            console.log(text[0][i]);
+            k+=text[0][i];
+            $('#title').html(k).show();
+            i++;
+            // Continue the loop in 0.3s
+            setTimeout(nextFrame, 300);
+        }
+        if(i==n){
+          $('#title').append(' &#9829;').show();
+          i+=1;
+        }
+    }
+    setInterval(nextFrame, 1000);
+
+
+  });
+  </script>
+
+</head>
+<body>
+  <div class="app app-default">
+
+<aside class="app-sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <a class="sidebar-brand" href="#"><span class="highlight">Food</span>Share</a>
+    <div id="title" style="text-align: center;font-size: 20px;font-family: Satisfy;color: #c88027;"></div>
+    <button type="button" class="sidebar-toggle">
+      <i class="fa fa-times"></i>
+    </button>
+  </div>
+  <div class="sidebar-menu">
+    <ul class="sidebar-nav">
+      <li class="{% block dashactive %}{% endblock %}">
+        <a href="{% url 'discussions:list' %}">
+          <div class="icon">
+            <i class="fa fa-tasks" aria-hidden="true"></i>
+          </div>
+          <div class="title">Dashboard</div>
+        </a>
+      </li>
+      <li class="{% block profileactive %}{% endblock %}">
+        <a href="{% url 'discussions:profile' %}">
+          <div class="icon">
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </div>
+          <div class="title">User</div>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="sidebar-footer">
+
+  </div>
+</aside>
+
+<script type="text/ng-template" id="sidebar-dropdown.tpl.html">
+  <div class="dropdown-background">
+    <div class="bg"></div>
+  </div>
+  <div class="dropdown-container">
+    {{list}}
+  </div>
+</script>
+<div class="app-container">
+
+  <nav class="navbar navbar-default" id="navbar">
+  <div class="container-fluid">
+    <div class="navbar-collapse collapse in">
+      <ul class="nav navbar-nav navbar-mobile">
+        <li>
+          <button type="button" class="sidebar-toggle">
+            <i class="fa fa-bars"></i>
+          </button>
+        </li>
+        <li class="logo">
+          <a class="navbar-brand" href="{% url 'discussions:list' %}"><span class="highlight">Food</span>Share</a>
+        </li>
+        <li>
+          <button type="button" class="navbar-toggle">
+                <div class="icon">
+                    <i class="fa fa-user fa-3x" aria-hidden="true"></i>
+                </div>
+          </button>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-left">
+        <li class="navbar-title">{% block title %}{% endblock %}</li>
+        <!--
+        <li class="navbar-search hidden-sm">
+          <input id="search" type="text" placeholder="Search..">
+          <button class="btn-search"><i class="fa fa-search"></i></button>
+        </li>-->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown profile">
+          <a href="{% url 'discussions:profile' %}" class="dropdown-toggle"  data-toggle="dropdown">
+            <div class="icon" style="text-align: center">
+            <i class="fa fa-user fa-2x" aria-hidden="true"></i>
+                <div style="text-transform: capitalize;text-align: center"> {{ request.user.username }}</div>
+          </div>
+            <div class="title">Profile</div>
+          </a>
+          <div class="dropdown-menu">
+            <div class="profile-info">
+              <h4 class="username" style="text-transform: capitalize">{{ request.user.username }}</h4>
+            </div>
+            <ul class="action">
+              <li>
+                <a href="{% url 'discussions:profile' %}">
+                  Profile
+                </a>
+              </li>
+              <li>
+                <a href="{% url 'alpha:logout' %}">
+                  Logout
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    {% block body %}
+
+    {% endblock %}
+
+    <div class="row">
+  </div>
+  <footer class="app-footer">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="footer-copyright">
+        Copyright &#9400 IIT Guwahati
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+
+  </div>
+
+  <script type="text/javascript" src="{% static 'discussions/JS/vendor.js' %}"></script>
+  <script type="text/javascript" src="{% static 'discussions/JS/app.js' %}"></script>
+
+</body>
+</html>

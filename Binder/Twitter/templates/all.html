@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% block msgactive %}active{% endblock %}
+{% block navbar %}Tweets{% endblock %}
+{% block body %}
+<div class="row">
+<div class="col-md-12">
+    </div>
+    </div>
+<div class="row">
+<div class="col-sm-12 col-xs-12">
+      <div class="card">
+        <div class="card-header">
+          All Tweets
+        </div>
+        <div class="card-body">
+            {% for tweets in all_tweets %}
+          <div class="media social-post">
+  <div class="media-left">
+    <a href="#">
+      <img src="../../media/{{ tweets.tweetfrom.profile_picture }}">
+    </a>
+  </div>
+  <div class="media-body">
+    <div class="media-heading">
+      <h4 class="title" style="font-weight: bold;">{{ tweets.tweetfrom }}</h4>
+      <h5 class="timeing">{{ tweets.timestamp }}</h5>
+    </div>
+    <div class="media-content">{{tweets.text}}</div>
+    <div class="media-content">Tags:{% for tweetto in tweets.tweetto.all %}
+    <a href="">#{{ tweetto }}</a>
+    {% endfor %}</div>
+    <div class="media-action">
+      <a href="{% url 'Twitter:addcomment' tweets.id %}"><button class="btn btn-link"><i class="fa fa-comments-o"></i> Comments:</button></a>
+    </div>
+  {% for comments in comment %}
+    {% if comments.commenton == tweets  %}
+    <div class="media-left col-md-1">
+    <a href="#">
+      <img src="../../media/{{ comments.commentfrom.profile_picture }}">
+    </a>
+    </div>
+    <div class="media-body">
+      <div class="media-heading">
+      <h4 class="title" style="font-weight: bold;">{{ comments.commentfrom }}</h4>
+      <h5 class="timeing">{{ comments.timestamp }}</h5>
+    </div>
+    <div class="media-content" style="font-size: 13px;">{{ comments.ctext }}</div>
+    </div>
+      {% endif %}
+      {% endfor %}
+    <div class="media-comment">
+    <div>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+      Add Comment
+      </button>
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Type in your Comment:</h4>
+          </div>
+          <div class="modal-body">
+            <iframe src="{% url 'Twitter:addcomment' tweets.id %}" width="100%"></iframe>
+            </div>
+          <div class="modal-footer">
+            <a href="{% url 'Twitter:main' %}"><button type="button" class="btn btn-sm btn-default">Close</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </div>
+</div>
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+
+</div>
+<div class="row">
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+

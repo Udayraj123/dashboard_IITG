@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block navbar %}Profile{% endblock %}
+{% block profileactive %}active{% endblock %}
+{% block body %}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">Profile Details:</div>
+            <div class="card-body">
+                <div class="media social-post">
+                    <div class="media-left">
+                        <a href="#">
+                            <img src="../../media/{{ user1.profile_picture }}">
+                        </a>
+                    </div>
+                    <div class="media-body">
+    <div class="media-heading">
+      <h4 class="title" style="font-weight: bold;">{{ user1.username }}</h4>
+      <h5 class="timeing">{{ user1.email }}</h5>
+    </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends 'cp/base.html' %}
+{% block albums_active %}active{% endblock %}
+
+{% block body %}
+<div class="albums-container container-fluid">
+
+    <!-- Albums -->
+    <div class="row">
+        <div class="col-sm-12">
+            <h3 style="text-transform: capitalize">{{ user.username }}'s Courses</h3>
+        </div>
+        {% if courses %}
+            {% for course in courses %}
+                <div class="col-sm-4 col-lg-2">
+                    <div class="thumbnail">
+                        <a href="{% url 'cp:viewlist' course.id %}">
+                            <h4>CourseTemplate</h4>
+                        </a>
+                        <div class="caption">
+                            <h2>{{ course.title }}</h2>
+                            <!-- View Details -->
+                            <a href="{% url 'cp:viewlist' course.id %}" class="btn btn-primary btn-sm" role="button">View Details</a>
+
+                        </div>
+                    </div>
+                </div>
+                {% cycle '' '' '' '' '' '<div class="clearfix visible-lg"></div>' %}
+            {% endfor %}
+        {% else %}
+        {% endif %}
+    </div>
+
+    <!-- If user searches and there are songs -->
+    {% if documents %}
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Documents</h3>
+            </div>
+            <div class="col-sm-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Course Title</th>
+                                    <th>Tutorial</th>
+                                    <th>Lectures</th>
+                                    <th>BookLink</th>
+                                    <th>PostedBy</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for document in documents %}
+                                    <tr>
+                                        <td>{{ document.course.title }}</td>
+                                        <td><a target="_blank" href="{{ document.tutorial.url }}">Tutorial</a></td>
+                                        <td>
+                                            <td><a target="_blank" href="{{ document.lecture.url }}">Lecture</a></td>
+                                        <td>
+                                            <td>{{ document.book_link }}</td>
+                                        <td>{{ document.postedby }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'discussions/base.html' %}
+{% block profileactive %}active{% endblock %}
+{% block title %}Profile{% endblock %}
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card" style="height: 250px;">
+                <div class="card-header">
+                    <div style="padding-left: 10px"><b>User Profile</b></div>
+                </div>
+                <div class="card-body">
+                    <div class="col-md-2">
+                        <a href="#">
+                          <div class="icon">
+                              <i class="fa fa-user fa-5x" aria-hidden="true"></i>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="col-md-9" style="text-transform: capitalize;font-size: 20px;">
+                        <b>User: </b>{{ request.user.username }} <br/><br/>
+                        <b>Webmail: </b>{{ request.user.email }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

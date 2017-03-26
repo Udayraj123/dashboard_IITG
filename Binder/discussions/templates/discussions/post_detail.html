@@ -1,0 +1,78 @@
+{% extends 'discussions/base.html' %}
+{% block dashactive %}active{% endblock %}
+{% block title %}Dashboard{% endblock %}
+{% block body %}
+    <div class="row">
+        <div class="col-md-6 center">
+            <a href="{% url 'discussions:list' %}"><button type="button" class="btn btn-success">Back</button></a>
+        </div>
+        <div class="col-md-12">
+            <div class="card">
+                {% load crispy_forms_tags %}
+                    {% if user.is_authenticated %}
+                        {% if user == writer %}
+                            <div class="card-header">
+                                <a href="/discussions/{{ obj.id }}/edit" class="btn  btn-primary btn-large login_now col-md-2 col-md-offset-3">Edit Post</a>
+                                <a href="/discussions/{{ obj.id }}/delete" class="btn  btn-primary btn-large login_now col-md-2 col-md-offset-1">Delete Post</a>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-2 col-md-offset-4"><b>Title:</b></div>
+                        <div class="col-md-6">{{ obj.title }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-md-offset-4"><b>Content:</b></div>
+                        <div class="col-md-6">{{ obj.content }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-md-offset-4"><b>GoingTo:</b></div>
+                        <div class="col-md-6">{{ obj.goingat }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-md-offset-4"><b>ComingBack:</b></div>
+                        <div class="col-md-6">{{ obj.comingback }}</div>
+                    </div>
+                    <hr/>
+                    <div class="row">
+                        <div class="col-md-2">
+                        <b>Comments:<br/><br/></b>
+                            </div>
+                    </div>
+                    {% for comment in comments %}
+                        <div class="media-left col-md-1">
+                        <a href="#">
+                          <div class="icon">
+                                <i class="fa fa-user fa-3x" aria-hidden="true"></i>
+                          </div>
+                        </a>
+                        </div>
+                        <div class="media-body">
+                          <div class="media-heading">
+                          <h4 class="title" style="font-weight: bold;">{{ comment.user }}</h4>
+                          <h5 class="timeing">{{ comment.timestamp|timesince }} ago</h5>
+                        </div>
+                        <div class="media-content" style="font-size: 13px;">{{ comment.content }}</div>
+                        </div>
+                    {% endfor %}
+                    <hr/>
+                    <div class="row">
+                        <div class="col-md-2">
+                        <b>Add a Comment:<br/><br/></b>
+                            </div>
+                    </div>
+                    <form id="icon_prefix2" class="materialize-textarea" method="POST" action="." >
+                        {% csrf_token %}
+                                {{ comment_form }}
+                        <br/>
+                        <button type="submit" class="btn btn-success" value="Post Comment">Post Comment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}

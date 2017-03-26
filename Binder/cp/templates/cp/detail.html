@@ -1,0 +1,82 @@
+{% extends 'cp/base.html' %}
+{% block title %}{{ courses }}{% endblock %}
+{% block albums_active %}active{% endblock %}
+
+{% block body %}
+<div class="container-fluid songs-container">
+
+    <div class="row">
+
+        <!-- Left Album Info -->
+        <div class="col-sm-4 col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <a href="{% url 'cp:viewlist' courses.id %}">
+                            <h3>CourseTemplate</h3>
+                    </a>
+                    <h1>{{ courses.title }}</h1>
+                    <h4 style="text-transform: capitalize">Professor: {{ poster }}</h4>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Song Info -->
+        <div class="col-sm-8 col-md-9">
+
+            <ul class="nav nav-pills" style="margin-bottom: 10px;">
+                <li role="presentation" class="active"><a href="{% url 'cp:viewlist' courses.id %}">View All</a></li>
+                <li role="presentation"><a href="{% url 'cp:add' courses.id %}">Add New Document</a></li>
+            </ul>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+                    <h3>All Documents</h3>
+
+                    {% if error_message %}
+                        <p><strong>{{ error_message }}</strong></p>
+                    {% endif %}
+
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Tutorial</th>
+                            <th>Lecture</th>
+                            <th>EBook</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for document in courses.document_set.all %}
+                            <tr>
+                            {% if document.tutorial %}
+                                <td><a target="_blank" href="{{ document.tutorial.url }}">Tutorial File(*.pdf)</a></td>
+                            {% else %}
+                                <td>---</td>
+                            {% endif %}
+                            {% if document.lecture %}
+                                <td><a target="_blank" href="{{ document.lecture.url }}">Lecture File(*.pdf)</a></td>
+                            {% else %}
+                                <td>---</td>
+                            {% endif %}
+                                <td>
+                                    {% if document.book_link %}
+                                        {{ document.book_link }}
+                                        {% else %}
+                                        No Link Uploaded
+                                    {% endif %}
+                                    </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
