@@ -1,0 +1,54 @@
+{% extends 'cp/base.html' %}
+{% block title %}All Documents{% endblock %}
+{% block songs_active %}active{% endblock %}
+
+{% block body %}
+<div class="container-fluid songs-container">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <ul class="nav nav-pills" style="margin-bottom: 10px;">
+                <li role="presentation" {% if filter_by == 'all' %}class="active"{% endif %}><a href="{% url 'cp:documents' 'all' %}">View All</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-sm-12">
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Tutorial</th>
+                            <th>Lecture</th>
+                            <th>EBook</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for document in courses.document_set.all %}
+                            <tr>
+                                <td><a target="_blank" href="{{ document.tutorial.url }}">Tutorial</a></td>
+                                <td><a target="_blank" href="{{ document.lecture.url }}">Lecture</a></td>
+                                <td>
+                                    {% if document.book_link %}
+                                        {{ document.book_link }}
+                                        {% else %}
+                                        No Link Uploaded
+                                    {% endif %}
+                                    </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}
