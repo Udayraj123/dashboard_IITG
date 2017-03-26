@@ -1,0 +1,358 @@
+<!doctype html>
+<html>
+<head><link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/><script src="js/jquery.min.js"></script><script src="js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .table td{
+            width:50%;}
+        .date{
+            width:33%;
+        }
+        body{
+
+            background-color:white;
+           
+        }
+
+    </style>
+    <title>DBD1
+    </title>
+</head>
+
+<body >
+<div class="container-fluid">
+    <div class="row">
+    <div class="col-md-1" ></div>
+    <div class="col-md-10" >
+    <h1 align="center" color="red">GUEST HOUSE BOOKING</h1>
+    TOTAL ROOMS - 500<br>
+    <script type="text/javascript">
+        var avl;
+        document.write("CURRENT AVAILABILITY  -  " + "400"	);
+
+    </script>
+    <br><br><br>
+        <h3 align="center">GUEST HOUSE ACCOMODATION</h3><br/>
+
+    <a name="gha"></a>
+    <form>
+        <table  class="table">
+            <tr>
+
+                <td>Name(s) of the Visitor(s) / Guest(s) </td>
+                <td><input type="text" class="form-control" id="t1" color="yellow" /></td>
+            </tr>
+            <tr>
+                <td>Designation(s) of the Visitor(s) / Guest(s),
+                    Department / Company affiliation & Address(s)
+                    with contact phone no./ e-mail ID, if any
+                </td>
+                <td><input type="text" class="form-control" id="t2" /></td>
+            </tr>
+
+            <tr>
+                <td>Purpose of visit
+                    (Please detail and enclose copy of official letter(s), where applicable)
+                </td>
+                <td><input type="text" class="form-control" id="t3" /></td>
+            </tr>
+
+            <tr>
+                <td>Date & Time of Arrival</td>
+                <td><div class="form-group">
+                    <label for="sel1">Select date:</label>
+                    <div class="date-selector row">
+                        <div class="col-md-4">
+                            <select class="form-control date" id="s1" style="width:100%" 	>
+                                <option  >Date</option>
+                                <option >1 </option>
+                                <option>2 </option>
+                                <option>3 </option>
+                                <option>4 </option>
+                                <option>5 </option>
+                                <option>6 </option>
+                                <option>7 </option>
+                                <option>8 </option>
+                                <option>9 </option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                                <option>13</option>
+                                <option>14</option>
+                                <option>15</option>
+                                <option>16</option>
+                                <option>17</option>
+                                <option>18</option>
+                                <option>19</option>
+                                <option>20</option>
+                                <option>21</option>
+                                <option>22</option>
+                                <option>23</option>
+                                <option>24</option>
+                                <option>25</option>
+                                <option>26</option>
+                                <option>27</option>
+                                <option>28</option>
+                                <option>29</option>
+                                <option>30</option>
+                                <option>31</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <select class="form-control date" id="s2" style="width:100%">
+                                <option >Month</option>
+                                <option>1 </option>
+                                <option>2 </option>
+                                <option>3 </option>
+                                <option>4 </option>
+                                <option>5 </option>
+                                <option>6 </option>
+                                <option>7 </option>
+                                <option>8 </option>
+                                <option>9 </option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <select class="form-control date" id="s3" style="width:100%">
+                                <option  >Year</option>
+                                <option>2017 </option>
+                                <option>2018 </option>
+
+
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+</div>Select Time:
+<div class="form-group">
+    <div class="date-selector row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <select class="form-control date" id="s4" style="width:100%" 	>
+                <option >Hours</option>
+                <option >1 </option>
+                <option>2 </option>
+                <option>3 </option>
+                <option>4 </option>
+                <option>5 </option>
+                <option>6 </option>
+                <option>7 </option>
+                <option>8 </option>
+                <option>9 </option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+                <option>13</option>
+                <option>14</option>
+                <option>15</option>
+                <option>16</option>
+                <option>17</option>
+                <option>18</option>
+                <option>19</option>
+                <option>20</option>
+                <option>21</option>
+                <option>22</option>
+                <option>23</option>
+                <option>24</option>
+
+            </select>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+            <select class="form-control date" id="s5" style="width:100%" 	>
+                <option >Minutes</option>
+                <option>00</option>
+                <option>15</option>
+                <option>30</option>
+                <option>45</option>
+            </select>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    </td>
+    </tr>
+
+    <tr>
+        <td>Date & Time of Departure</td>
+        <td><div class="form-group">
+            <label for="sel1">Select date:</label>
+            <div class="date-selector row">
+                <div class="col-md-4">
+                    <select class="form-control date" id="s1" style="width:100%" 	>
+                        <option >Date</option>
+                        <option >1 </option>
+                        <option>2 </option>
+                        <option>3 </option>
+                        <option>4 </option>
+                        <option>5 </option>
+                        <option>6 </option>
+                        <option>7 </option>
+                        <option>8 </option>
+                        <option>9 </option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                        <option>13</option>
+                        <option>14</option>
+                        <option>15</option>
+                        <option>16</option>
+                        <option>17</option>
+                        <option>18</option>
+                        <option>19</option>
+                        <option>20</option>
+                        <option>21</option>
+                        <option>22</option>
+                        <option>23</option>
+                        <option>24</option>
+                        <option>25</option>
+                        <option>26</option>
+                        <option>27</option>
+                        <option>28</option>
+                        <option>29</option>
+                        <option>30</option>
+                        <option>31</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <select class="form-control date" id="s2" style="width:100%">
+                        <option  >Month</option>
+                        <option>1 </option>
+                        <option>2 </option>
+                        <option>3 </option>
+                        <option>4 </option>
+                        <option>5 </option>
+                        <option>6 </option>
+                        <option>7 </option>
+                        <option>8 </option>
+                        <option>9 </option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <select class="form-control date" id="s3" style="width:100%">
+                        <option  >Year</option>
+                        <option>2017 </option>
+                        <option>2018 </option>
+
+
+
+                    </select>
+                </div>
+            </div>
+        </div>
+</div>
+
+Select Time:
+<div class="form-group">
+    <div class="date-selector row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <select class="form-control date" id="s4" style="width:100%" 	>
+                <option >Hours</option>
+                <option >1 </option>
+                <option>2 </option>
+                <option>3 </option>
+                <option>4 </option>
+                <option>5 </option>
+                <option>6 </option>
+                <option>7 </option>
+                <option>8 </option>
+                <option>9 </option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+                <option>13</option>
+                <option>14</option>
+                <option>15</option>
+                <option>16</option>
+                <option>17</option>
+                <option>18</option>
+                <option>19</option>
+                <option>20</option>
+                <option>21</option>
+                <option>22</option>
+                <option>23</option>
+                <option>24</option>
+
+            </select>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+            <select class="form-control date" id="s5" style="width:100%" 	>
+                <option >Minutes</option>
+                <option>00</option>
+                <option>15</option>
+                <option>30</option>
+                <option>45</option>
+            </select>
+        </div>
+        <div class="col-md-1"></div>
+    </div></td>
+    </tr>
+
+    <tr>
+        <td>Type of occupancy preferred
+            (Please note that all rooms are double bedded)
+        </td>
+        <td><div class="row"> <div class="col-md-6">  Single :  <input type="radio" class="radio" name="num" value="single" /><br>
+            Double : <input type="radio" class="radio" name="num" value="double" /></div>
+            <div class="col-md-6">
+                No. of rooms required  :  <input type="text" class="form-control" id="t14"/></div></div></td>
+    </tr>
+
+    <tr>
+        <td>Source of Payment:<br><ol>
+            <li>	If Payment is from Department/Centre / Section, Please Mention the Head of Account</li>
+            <li>	If Payment is from Project: Please Mention the Project No.</li>
+            <li>	Self payment (By the Guest(s))</li></ol><br>
+            <b>(Request for Guest House Accommodation must reach Establishment Section atleast one day before the last working day prior to arrival of the Guest. In case the purpose of visit is official, the indent must be countersigned by HoD/HoC/HoS and in case of project, the indent must be countersigned by Dean R&D)</b>
+        </td>
+        <td>Please Tick the appropriate box(s)<br>
+            <div class="row"><div class="col-md-12" style="text-align:center;font-style:bold">LODGING</div></div>
+            <div class="row"><div class="col-md-3">1</div><div class="col-md-3">2</div><div class="col-md-3">3</div><div class="col-md-3">4</div></div>
+            <div class="row">
+                <div class="col-md-3"><input type="radio" class="rad" name="numb" value="one" /></div>
+                <div class="col-md-3"><input type="radio" class="rad" name="numb" value="two" /></div>
+                <div class="col-md-3"><input type="radio" class="rad" name="numb" value="three" /></div>
+                <div class="col-md-3"><input type="radio" class="rad" name="numb" value="four" /></div>
+            </div><br>
+            <div class="row"><div class="col-md-12" style="text-align:center;font-style:bold">FOODS AND BEVERAGES</div></div>
+            <div class="row"><div class="col-md-3">1</div><div class="col-md-3">2</div><div class="col-md-3">3</div><div class="col-md-3">4</div></div>
+            <div class="row">
+                <div class="col-md-3"><input type="radio" class="rad" name="no" value="one" /></div>
+                <div class="col-md-3"><input type="radio" class="rad" name="no" value="two" /></div>
+                <div class="col-md-3"><input type="radio" class="rad" name="no" value="three" /></div>
+                <div class="col-md-3"><input type="radio" class="rad" name="no" value="four" /></div>
+            </div><br>
+            <div class="row"><div class="col-md-12" style="text-align:center;font-style:bold">Project No./Account Head (in case of 1 and 2):</div></div>
+            <input type="text" class="form-control" id="t7"/>
+        </td></tr>
+    </td>
+    </tr>
+
+    <tr>
+        <td>Remarks, if any :
+            <input type="text"  class="form-control" id="t9" /><br>
+        </td>
+        <td>
+            Name  :  <input type="text" class="form-control" id="t10"/>
+            Designation : <input type="text" class="form-control" id="t11"/>
+            Department/Section/Centre : <input type="text" class="form-control" id="t12"/>
+            Contact Phone No. / e-mail ID, if any : <input type="text" class="form-control" id="t13"/>
+        </td>
+    </tr>
+    </table></form><hr>
+</div>
+<div class="col-md-1></div>
+</div>
+</div>
+
+</body>
+</html> 
