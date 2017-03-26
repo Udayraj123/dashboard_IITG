@@ -2,24 +2,18 @@
 You can add the following alias to your shell : 
 (Change the directory to the place where you have cloned the code.)
 
-On Linux (/etc/bash.bashrc): 
+#On Linux (/etc/bash.bashrc): 
 <code>
-appDir=$HOME/Downloads/dashboard_IITG
-
-alias startPortal=";;";
-
-## declare an array of php apps to serve
-declare -a arr=("element1" "element2" "element3")
-
-## now loop through the above array
-for i in "${arr[@]}"
-do
-   cd $appDir/"$i"
-   php artisan serve
-done
-
-# You can access them using echo "${arr[0]}", "${arr[1]}" also
-
+	(change base dir according to your downloaded place)
+	baseDir=$HOME/Downloads/dashboard_IITG;  
+	appDir=$baseDir/laravel_projects
+	djangoDir=$baseDir/Binder
+	alias startPortal="cd $appDir; php artisan serve --port 1234;"cd $djangoDir;python manage.py runserver;";
 </code>
-On Windows : Create a Batch file in C:\Windows\System32
-set appDir = %USERPROFILE%\Downloads\dashboard_IITG
+#On Windows : Create a Batch file as <alias_name>.bat (eg startPortal.bat) and save it in C:\Windows\System32 
+<code>
+	set baseDir = %USERPROFILE%\Downloads\dashboard_IITG
+	set appDir = %baseDir%\laravel_projects
+	set djangoDir = %baseDir%\Binder
+	cd %appDir%; php artisan serve --port 1234;"cd %djangoDir%;python manage.py runserver;
+</code>
