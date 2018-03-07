@@ -33,4 +33,4 @@ You can add the following alias to your shell :
 	cd %appDir%; php artisan serve --port 1234;"cd %djangoDir%;python manage.py runserver;
 </code>
 
-for Database : import the sql file in 'others/' directory into a database 'dashboard'
+for Database : import the sql file in 'others/' directory into a database 'dashboard'.
